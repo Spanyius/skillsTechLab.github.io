@@ -1,7 +1,6 @@
-SKILLSTECH LAB - STANDALONE WEBSITE BASELINE
+SkillsTech Lab standalone preview
 
-Open index.html to preview the website locally. Use the styled header to navigate between pages.
-No screenshots and no separate HTML preview/gallery page are included.
+Open index.html in a browser to preview the site locally.
 
 Pages:
 - index.html
@@ -10,23 +9,25 @@ Pages:
 - products.html
 - projects.html
 - team.html
+- contact.html
 
-Structure:
-- styles.css: shared site and standalone-header styles
-- assets/: all visual assets referenced by the HTML
+Assets are in /assets. Real supplied logo files now use clean final filenames; the legacy placeholder suffix has been removed.
+Union of Skills has no logo asset by design; its collaboration link remains text-based.
+No screenshots or separate preview-gallery HTML are included.
 
-Asset convention:
-- Real supplied project/EACEA assets use their normal filenames.
-- If the design expects a logo but the asset has not been supplied, a transparent PNG is created in assets/ with the suffix _missing.png and the HTML references that file.
-- Replace/provide these assets in a future version and the corresponding HTML/CSS slot can be finalized.
 
-Current missing logo placeholders:
-- assets/skills-hub-logo_missing.png
-- assets/dovednosti-msk-logo_missing.png
-- assets/learning-platform-logo_missing.png
-- assets/union-of-skills-logo_missing.png
-- assets/pact-for-skills-logo_missing.png
+CURRENT CONTENT NOTES
+- Research & Development has exactly 3 focus areas, ordered: Technological Innovation; Advanced Learning Solutions; Skills Intelligence Anticipation & Gathering.
+- Collaboration is a separate cross-cutting page/menu item, not a fourth R&D focus area.
+- Contact emails: jakub.stolfa@vsb.cz and svatopluk.stolfa@vsb.cz.
+- Institution address: VSB – Technical University of Ostrava, Faculty of Electrical Engineering and Computer Science, 17. listopadu 2172/15, 708 00 Ostrava – Poruba.
+- Project periods were added from Automotive Skills Alliance and official project information where available. CaBatt is listed as 2023–2025 and linked to https://project-cabatt.eu/.
+- SOQRATES and EuroSPI² community references and official links are included. The runtime could not fetch the official binary logo files, so transparent replacement slots are included as assets/soqrates-logo_missing.png and assets/eurospi-logo_missing.png in line with the agreed *_missing convention. EuroSPI official logo source identified: https://www.eurospi.net/ressources/Logo/eurospi_logo-klein.png
 
-Visual baseline rule:
-- Sections dominated by project/logo artwork use a white background for clean logo rendering.
-- Surrounding sections retain the alternating white/soft-colour/dark rhythm so the site does not become visually flat.
+- Dovednosti-MSK: https://dovednosti-msk.cz/home
+- SOQRATES and EuroSPI logo images are referenced from the official URLs supplied for this version.
+- Site favicon and three research-area symbols are included under assets/.
+
+TEAM PHOTO NOTE
+---------------
+Team avatars default to the neutral built-in person icon. A LinkedIn photo is used only when a matching public profile and public photo URL were verified. The current implementation links Jakub Stolfa's verified public LinkedIn photo/avatar to his LinkedIn profile. LinkedIn does not provide a stable unauthenticated public-avatar endpoint for arbitrary profiles, so the static site does not scrape LinkedIn on page load. If a remote LinkedIn photo becomes unavailable, the avatar automatically falls back to the generic icon.

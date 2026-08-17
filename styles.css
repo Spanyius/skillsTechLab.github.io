@@ -427,20 +427,22 @@ Accessibility target: WCAG 2.2 AA-oriented implementation for the supplied page 
   height: 92px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding: 14px 16px;
-  border: 1px solid #dce7eb;
-  border-radius: 17px;
-  background: #fff;
+  justify-content: center;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   overflow: hidden;
 }
 .stl-site .stl-product-logo img {
+  display: block;
   width: auto;
   height: auto;
-  max-width: 100%;
-  max-height: 60px;
+  max-width: min(100%, 230px);
+  max-height: 66px;
+  margin-inline: auto;
   object-fit: contain;
-  object-position: left center;
+  object-position: center center;
 }
 
 /* Projects */
@@ -491,13 +493,37 @@ Accessibility target: WCAG 2.2 AA-oriented implementation for the supplied page 
 .stl-site .stl-person { min-height: 250px; }
 .stl-site .stl-person-top { display: flex; align-items: center; gap: 16px; }
 .stl-site .stl-avatar {
-  width: 66px; height: 66px; display: grid; place-items: center; flex: 0 0 auto;
-  border-radius: 21px;
-  color: #fff;
+  position: relative;
+  width: 66px;
+  height: 66px;
+  display: block;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #e4f4f2, #e7eef8);
+  box-shadow: inset 0 0 0 1px rgba(0,95,90,.10);
+  overflow: hidden;
+}
+.stl-site .stl-avatar::before {
+  content: "";
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  left: 50%;
+  top: 14px;
+  transform: translateX(-50%);
+  border-radius: 50%;
   background: linear-gradient(145deg, #006f6a, #1d4d8f);
-  font-size: .92rem;
-  font-weight: 900;
-  letter-spacing: .04em;
+}
+.stl-site .stl-avatar::after {
+  content: "";
+  position: absolute;
+  width: 36px;
+  height: 22px;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+  border-radius: 20px 20px 11px 11px;
+  background: linear-gradient(145deg, #006f6a, #1d4d8f);
 }
 .stl-site .stl-role { color: var(--stl-teal); font-weight: 800; font-size: .9rem; }
 .stl-site .stl-person p { color: var(--stl-ink-soft); }
@@ -770,20 +796,22 @@ Accessibility target: WCAG 2.2 AA-oriented implementation for the supplied page 
   height: 90px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding: 14px 16px;
-  border: 1px solid #dce7eb;
-  border-radius: 17px;
-  background: #fff;
+  justify-content: center;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   overflow: hidden;
 }
 .stl-site .stl-project-logo img {
+  display: block;
   width: auto;
   height: auto;
-  max-width: 100%;
-  max-height: 58px;
+  max-width: min(100%, 250px);
+  max-height: 62px;
+  margin-inline: auto;
   object-fit: contain;
-  object-position: left center;
+  object-position: center center;
 }
 .stl-site .stl-project-logo-strip {
   display: grid;
@@ -807,16 +835,20 @@ Accessibility target: WCAG 2.2 AA-oriented implementation for the supplied page 
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 12px;
-  border-radius: 13px;
-  background: #fff;
+  padding: 6px 8px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
 }
 .stl-site .stl-project-logo-image img {
+  display: block;
   width: auto;
   height: auto;
-  max-width: 100%;
-  max-height: 48px;
+  max-width: min(100%, 220px);
+  max-height: 54px;
+  margin-inline: auto;
   object-fit: contain;
+  object-position: center center;
 }
 .stl-site .stl-project-logo-tile span {
   color: var(--stl-ink);
@@ -825,17 +857,32 @@ Accessibility target: WCAG 2.2 AA-oriented implementation for the supplied page 
   line-height: 1.3;
   text-align: center;
 }
+
+.stl-site .stl-project-logo-period {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--stl-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+}
+
 .stl-site .stl-collab-asset {
   height: 86px;
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-bottom: 14px;
 }
 .stl-site .stl-collab-asset img {
+  display: block;
   width: auto;
-  max-width: 176px;
+  max-width: 190px;
   max-height: 78px;
+  margin-inline: auto;
   object-fit: contain;
+  object-position: center center;
 }
 .stl-site .stl-collab-assets {
   display: flex;
@@ -848,29 +895,27 @@ Accessibility target: WCAG 2.2 AA-oriented implementation for the supplied page 
   min-width: 0;
   margin-bottom: 0;
 }
-.stl-site .stl-logo-missing {
-  position: relative;
-  border-style: dashed;
-  border-color: #b7c9d0;
-  background: #f8fbfc;
-}
-.stl-site .stl-logo-missing::after {
-  content: attr(data-missing-label) " · asset missing";
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  padding: 10px;
-  color: #6a7f89;
-  font-size: .72rem;
-  font-weight: 760;
-  letter-spacing: .01em;
-  line-height: 1.25;
-  text-align: center;
-  pointer-events: none;
-}
-.stl-site .stl-logo-missing img { opacity: 0; }
+.stl-site .stl-collab-asset--center { justify-content: center; }
 
+/* Contact page */
+.stl-site .stl-contact-person { min-height: 280px; }
+.stl-site .stl-contact-detail {
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid var(--stl-line);
+  display: grid;
+  gap: 4px;
+}
+.stl-site .stl-contact-detail span {
+  color: var(--stl-teal);
+  font-size: .78rem;
+  font-weight: 850;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.stl-site .stl-contact-detail strong { color: var(--stl-ink-soft); font-size: .95rem; }
+.stl-site .stl-contact-context { min-height: 250px; }
+.stl-site .stl-contact-context > p:not(.stl-kicker) { color: var(--stl-ink-soft); }
 
 @media (max-width: 1120px) {
   .demo-nav { width: min(calc(100% - 30px), 1240px); gap: 18px; }
@@ -912,4 +957,298 @@ Accessibility target: WCAG 2.2 AA-oriented implementation for the supplied page 
 @media (prefers-reduced-motion: reduce) {
   .demo-nav nav a { transition: none; }
   .demo-nav nav a::after { transition: none; }
+}
+
+
+/* Project periods and contact details */
+.stl-site .stl-project-period {
+  display: inline-grid;
+  gap: 2px;
+  align-self: flex-start;
+  margin: 4px 0 2px;
+  padding: 9px 12px;
+  border-radius: 13px;
+  background: #f0f8f8;
+  color: var(--stl-ink);
+}
+.stl-site .stl-project-period span { color: var(--stl-teal); font-size: .7rem; font-weight: 850; letter-spacing: .07em; text-transform: uppercase; }
+.stl-site .stl-project-period strong { font-size: .9rem; line-height: 1.25; }
+.stl-site .stl-project-period--pending { background: #f6f7f8; color: var(--stl-ink-soft); }
+.stl-site .stl-contact-email { color: var(--stl-ink); font-size: 1rem; font-weight: 820; overflow-wrap: anywhere; }
+.stl-site .stl-contact-email:hover { color: var(--stl-teal); }
+.stl-site .stl-address { margin-top: 1rem; color: var(--stl-ink-soft); font-style: normal; line-height: 1.75; }
+.stl-site .stl-person-email { margin-top: auto; }
+
+
+/* Current refinement: area symbols, compact project duration, compact events card */
+.stl-site .stl-focus-index { width:auto; min-width:76px; height:38px; display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:0 10px; }
+.stl-site .stl-focus-index img { width:19px; height:19px; filter:brightness(0) saturate(100%) invert(89%) sepia(22%) saturate(664%) hue-rotate(124deg) brightness(104%) contrast(91%); }
+.stl-site .stl-focus-index b { font:inherit; font-weight:900; }
+.stl-site .stl-area-number { display:inline-flex; align-items:center; gap:10px; width:fit-content; }
+.stl-site .stl-area-number .stl-card-number { flex:0 0 auto; }
+.stl-site .stl-area-number > img { width:30px; height:30px; opacity:.88; }
+.stl-site .stl-pillar-focus { display:inline-flex; align-items:center; gap:9px; margin-bottom:.65rem; color:#c7f2ee; font-size:.78rem; font-weight:850; letter-spacing:.09em; text-transform:uppercase; }
+.stl-site .stl-pillar-focus img { width:24px; height:24px; filter:brightness(0) saturate(100%) invert(93%) sepia(16%) saturate(733%) hue-rotate(121deg) brightness(103%) contrast(90%); }
+.stl-site .stl-project-period { display:inline-flex; align-items:center; gap:6px; align-self:flex-start; margin:1px 0 0; padding:5px 9px; border-radius:999px; background:#f0f8f8; color:var(--stl-ink); white-space:nowrap; }
+.stl-site .stl-project-period span { color:var(--stl-teal); font-size:.62rem; font-weight:850; letter-spacing:.055em; text-transform:uppercase; line-height:1; }
+.stl-site .stl-project-period strong { font-size:.78rem; line-height:1.1; }
+.stl-site .stl-project-card h3 { min-height:0; margin-bottom:0; }
+.stl-site .stl-collab-event-card { margin-top:18px; display:flex; align-items:center; gap:18px; padding:18px 22px; border:1px solid var(--stl-line); border-radius:18px; background:#f7fafb; box-shadow:none; }
+.stl-site .stl-collab-event-card .stl-card-number { width:40px; height:40px; border-radius:12px; flex:0 0 auto; }
+.stl-site .stl-collab-event-card h3 { margin:0; font-size:1.02rem; }
+.stl-site .stl-collab-event-card p { margin:.3rem 0 0; color:var(--stl-ink-soft); font-size:.9rem; line-height:1.5; }
+@media (max-width:620px) { .stl-site .stl-collab-event-card { align-items:flex-start; padding:16px; } .stl-site .stl-project-period { white-space:normal; } }
+
+
+/* Homepage research areas: exactly three, presented as full-width horizontal rows
+   to avoid an orphaned fourth grid position at medium screen sizes. */
+.stl-site .stl-home-areas {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+.stl-site .stl-home-area-card {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(18px, 3vw, 34px);
+  padding-block: clamp(22px, 2.6vw, 30px);
+}
+.stl-site .stl-home-area-card .stl-area-number { margin: 0; }
+.stl-site .stl-home-area-copy { display: grid; gap: 6px; }
+.stl-site .stl-home-area-copy h3,
+.stl-site .stl-home-area-copy p { margin: 0; }
+.stl-site .stl-home-area-copy p { max-width: 78ch; }
+.stl-site .stl-home-area-card .stl-actions {
+  margin: 0;
+  padding: 0;
+  align-self: center;
+}
+
+/* LinkedIn-backed team photo: use only when a verified public image is available.
+   The existing pseudo-element person icon remains the automatic fallback. */
+.stl-site .stl-avatar-link { text-decoration: none; }
+.stl-site .stl-avatar--photo::before,
+.stl-site .stl-avatar--photo::after { display: none; }
+.stl-site .stl-avatar--photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.stl-site .stl-avatar-link:hover { box-shadow: 0 0 0 4px rgba(0,111,106,.16); }
+.stl-site .stl-avatar-link:focus-visible {
+  outline: 3px solid #0a7681;
+  outline-offset: 4px;
+}
+
+@media (max-width: 760px) {
+  .stl-site .stl-home-area-card {
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: start;
+  }
+  .stl-site .stl-home-area-card .stl-actions {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+}
+
+
+/* 2026-08 R&D expansion + homepage layout correction */
+/* Hero focus: three items read as one compact vertical sequence. */
+.stl-site .stl-focus-panel {
+  grid-template-columns: 1fr;
+  max-width: 560px;
+  justify-self: end;
+}
+.stl-site .stl-focus-card {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  align-items: center;
+  gap: 3px 16px;
+  padding: 17px 19px;
+}
+.stl-site .stl-focus-card .stl-focus-index { grid-row: 1 / span 2; }
+.stl-site .stl-focus-card strong { align-self: end; }
+.stl-site .stl-focus-card > span:last-child { grid-column: 2; align-self: start; }
+
+/* Main R&D summary: restore the intended three-column desktop composition. */
+.stl-site .stl-home-areas {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.stl-site .stl-home-area-card {
+  min-height: 325px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 18px;
+  padding-block: 28px;
+}
+.stl-site .stl-home-area-card .stl-area-number { margin: 0; }
+.stl-site .stl-home-area-card .stl-actions {
+  margin-top: auto;
+  padding-top: 4px;
+  align-self: stretch;
+}
+
+/* Rich R&D resource blocks */
+.stl-site .stl-rd-expansion {
+  margin-top: 30px;
+  padding-top: 28px;
+  border-top: 1px solid var(--stl-line);
+}
+.stl-site .stl-rd-expansion > h3 {
+  margin: 0 0 8px;
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+}
+.stl-site .stl-rd-intro {
+  max-width: 76ch;
+  margin: 0 0 20px;
+  color: var(--stl-ink-soft);
+  line-height: 1.7;
+}
+.stl-site .stl-resource-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+.stl-site .stl-resource-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.stl-site .stl-resource-card {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid var(--stl-line);
+  border-radius: 16px;
+  background: #fff;
+}
+.stl-site .stl-resource-card--tint { background: #f5fafb; }
+.stl-site .stl-resource-card h4 {
+  margin: 5px 0 7px;
+  font-size: 1.02rem;
+  line-height: 1.3;
+}
+.stl-site .stl-resource-card p {
+  margin: 0;
+  color: var(--stl-ink-soft);
+  font-size: .9rem;
+  line-height: 1.6;
+}
+.stl-site .stl-resource-eyebrow {
+  color: var(--stl-teal);
+  font-size: .69rem;
+  font-weight: 850;
+  letter-spacing: .075em;
+  text-transform: uppercase;
+}
+.stl-site .stl-resource-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 12px;
+  margin-top: 13px;
+}
+.stl-site .stl-resource-links a,
+.stl-site .stl-inline-link {
+  color: var(--stl-teal-dark, #075f5b);
+  font-size: .82rem;
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.stl-site .stl-resource-links a:hover,
+.stl-site .stl-inline-link:hover { text-decoration-thickness: 2px; }
+.stl-site .stl-methodology {
+  margin-top: 18px;
+  padding: 22px;
+  border-radius: 18px;
+  background: #eef7f7;
+}
+.stl-site .stl-methodology h4 { margin: 0 0 6px; font-size: 1.08rem; }
+.stl-site .stl-methodology > p { margin: 0; color: var(--stl-ink-soft); line-height: 1.65; }
+.stl-site .stl-method-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+}
+.stl-site .stl-method-step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  align-items: start;
+  padding: 13px;
+  border-radius: 13px;
+  background: rgba(255,255,255,.78);
+}
+.stl-site .stl-method-step b {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 9px;
+  background: var(--stl-teal);
+  color: #fff;
+  font-size: .72rem;
+}
+.stl-site .stl-method-step span { color: var(--stl-ink-soft); font-size: .84rem; line-height: 1.48; }
+.stl-site .stl-note-box {
+  margin-top: 16px;
+  padding: 15px 17px;
+  border-left: 3px solid var(--stl-teal);
+  border-radius: 0 12px 12px 0;
+  background: #f5fafb;
+  color: var(--stl-ink-soft);
+  line-height: 1.62;
+}
+.stl-site .stl-note-box strong { color: var(--stl-ink); }
+.stl-site .stl-course-grid,
+.stl-site .stl-publication-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+.stl-site .stl-course-link,
+.stl-site .stl-publication-card {
+  display: block;
+  padding: 15px 16px;
+  border: 1px solid var(--stl-line);
+  border-radius: 14px;
+  background: #fff;
+  color: inherit;
+  text-decoration: none;
+}
+.stl-site .stl-course-link:hover,
+.stl-site .stl-publication-card:hover {
+  border-color: rgba(0,111,106,.45);
+  box-shadow: 0 9px 22px rgba(23,43,54,.07);
+}
+.stl-site .stl-course-link strong,
+.stl-site .stl-publication-card strong { display: block; color: var(--stl-ink); line-height: 1.35; }
+.stl-site .stl-course-link span,
+.stl-site .stl-publication-card span { display: block; margin-top: 5px; color: var(--stl-ink-soft); font-size: .82rem; line-height: 1.5; }
+.stl-site .stl-publication-card em { display: block; margin-top: 9px; color: var(--stl-teal); font-size: .74rem; font-style: normal; font-weight: 850; }
+.stl-site .stl-person-research { margin-top: auto; padding-top: 14px; }
+.stl-site .stl-person-research .stl-button { font-size: .76rem; }
+
+@media (max-width: 900px) {
+  .stl-site .stl-home-areas { grid-template-columns: 1fr; }
+  .stl-site .stl-home-area-card { min-height: 0; }
+  .stl-site .stl-resource-grid,
+  .stl-site .stl-resource-grid--2,
+  .stl-site .stl-method-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 650px) {
+  .stl-site .stl-focus-panel { max-width: none; justify-self: stretch; }
+  .stl-site .stl-focus-card { padding: 15px; }
+  .stl-site .stl-resource-grid,
+  .stl-site .stl-resource-grid--2,
+  .stl-site .stl-method-grid,
+  .stl-site .stl-course-grid,
+  .stl-site .stl-publication-grid { grid-template-columns: 1fr; }
+  .stl-site .stl-methodology { padding: 17px; }
 }
