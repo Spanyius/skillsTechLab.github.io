@@ -1,11 +1,7 @@
-SKILLSTECH LAB - STANDALONE VISUAL PREVIEW
+SKILLSTECH LAB - STANDALONE WEBSITE BASELINE
 
-1. Unzip this folder.
-2. Double-click VISUAL-PREVIEW.html for a screenshot overview, or index.html for the live clickable site.
-3. Use the white header at the top to navigate between all pages.
-4. The white header is only a preview stand-in for your existing WordPress header.
-5. All SkillsTech Lab page styling is in styles.css.
-6. The screenshots folder contains static desktop/mobile previews.
+Open index.html to preview the website locally. Use the styled header to navigate between pages.
+No screenshots and no separate HTML preview/gallery page are included.
 
 Pages:
 - index.html
@@ -15,4 +11,22 @@ Pages:
 - projects.html
 - team.html
 
-The WordPress installation package is separate; this folder is only for visual checking and navigation before deployment.
+Structure:
+- styles.css: shared site and standalone-header styles
+- assets/: all visual assets referenced by the HTML
+
+Asset convention:
+- Real supplied project/EACEA assets use their normal filenames.
+- If the design expects a logo but the asset has not been supplied, a transparent PNG is created in assets/ with the suffix _missing.png and the HTML references that file.
+- Replace/provide these assets in a future version and the corresponding HTML/CSS slot can be finalized.
+
+Current missing logo placeholders:
+- assets/skills-hub-logo_missing.png
+- assets/dovednosti-msk-logo_missing.png
+- assets/learning-platform-logo_missing.png
+- assets/union-of-skills-logo_missing.png
+- assets/pact-for-skills-logo_missing.png
+
+Visual baseline rule:
+- Sections dominated by project/logo artwork use a white background for clean logo rendering.
+- Surrounding sections retain the alternating white/soft-colour/dark rhythm so the site does not become visually flat.
