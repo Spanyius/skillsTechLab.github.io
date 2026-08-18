@@ -723,55 +723,18 @@ Accessibility target: WCAG 2.2 AA-oriented implementation for the supplied page 
 .demo-brand {
   display: inline-flex;
   align-items: center;
-  gap: .85rem;
   flex: 0 0 auto;
   color: var(--demo-ink);
   text-decoration: none;
-  letter-spacing: -.02em;
+  line-height: 0;
 }
 .demo-brand:hover { text-decoration: none; }
-.demo-brand-mark {
-  position: relative;
-  width: 43px;
-  height: 43px;
+.demo-brand-logo {
   display: block;
-  flex: 0 0 auto;
-  border-radius: 14px;
-  background: linear-gradient(145deg, #061c2b, #0c4052);
-  box-shadow: 0 9px 22px rgba(6,28,43,.18), inset 0 0 0 1px rgba(255,255,255,.08);
-  overflow: hidden;
-}
-.demo-brand-mark::after {
-  content: "";
-  position: absolute;
-  inset: 7px;
-  border: 1px solid rgba(255,255,255,.2);
-  border-radius: 9px;
-}
-.demo-brand-mark i {
-  position: absolute;
-  z-index: 1;
-  display: block;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #8be6df;
-  box-shadow: 0 0 0 4px rgba(139,230,223,.09);
-}
-.demo-brand-mark i:nth-child(1) { left: 10px; top: 10px; }
-.demo-brand-mark i:nth-child(2) { right: 9px; top: 18px; background: #7cc5e8; }
-.demo-brand-mark i:nth-child(3) { left: 16px; bottom: 8px; background: #fff; }
-.demo-brand-copy { display: grid; gap: 1px; }
-.demo-brand-copy strong {
-  color: var(--demo-ink);
-  font: 850 1.08rem/1.15 Inter, Aptos, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  letter-spacing: -.025em;
-}
-.demo-brand-copy small {
-  color: var(--demo-soft);
-  font: 700 .68rem/1.25 Inter, Aptos, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  letter-spacing: .025em;
-  white-space: nowrap;
+  width: 190px;
+  height: auto;
+  max-height: 76px;
+  object-fit: contain;
 }
 .demo-nav nav {
   display: flex;
@@ -955,15 +918,13 @@ Accessibility target: WCAG 2.2 AA-oriented implementation for the supplied page 
 
 @media (max-width: 1120px) {
   .demo-nav { width: min(calc(100% - 30px), 1240px); gap: 18px; }
-  .demo-brand-copy small { display: none; }
+  .demo-brand-logo { width: 172px; }
   .demo-nav nav a { padding-inline: 9px; font-size: .79rem; }
   .stl-site .stl-project-logo-strip { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (max-width: 620px) {
   .demo-nav { width: min(calc(100% - 24px), 1240px); }
-  .demo-brand-mark { width: 39px; height: 39px; border-radius: 13px; }
-  .demo-brand-copy strong { font-size: 1rem; }
-  .demo-brand-copy small { font-size: .62rem; }
+  .demo-brand-logo { width: 160px; }
   .stl-site .stl-project-logo-strip { grid-template-columns: 1fr 1fr; }
   .stl-site .stl-project-logo-tile { min-height: 126px; }
 }
@@ -1337,15 +1298,9 @@ Accessibility target: WCAG 2.2 AA-oriented implementation for the supplied page 
     min-width: 0;
     max-width: calc(100% - 60px);
   }
-  .demo-brand-copy { min-width: 0; }
-  .demo-brand-copy strong { font-size: 1rem; }
-  .demo-brand-copy small {
-    display: block;
-    max-width: min(62vw, 360px);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    font-size: .62rem;
+  .demo-brand-logo {
+    width: 158px;
+    max-width: 100%;
   }
   .demo-menu-toggle { display: inline-flex; }
   .demo-nav nav {
@@ -1387,8 +1342,7 @@ Accessibility target: WCAG 2.2 AA-oriented implementation for the supplied page 
 }
 
 @media (max-width: 430px) {
-  .demo-brand-mark { width: 38px; height: 38px; border-radius: 12px; }
-  .demo-brand-copy small { max-width: 52vw; }
+  .demo-brand-logo { width: 146px; }
   .demo-menu-toggle { width: 46px; height: 46px; flex-basis: 46px; border-radius: 13px; }
 }
 
