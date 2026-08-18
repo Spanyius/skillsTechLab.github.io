@@ -28,6 +28,10 @@ CURRENT CONTENT NOTES
 - SOQRATES and EuroSPI logo images are referenced from the official URLs supplied for this version.
 - Site favicon and three research-area symbols are included under assets/.
 
-TEAM PHOTO NOTE
----------------
-Team avatars default to the neutral built-in person icon. A LinkedIn photo is used only when a matching public profile and public photo URL were verified. The current implementation links Jakub Stolfa's verified public LinkedIn photo/avatar to his LinkedIn profile. LinkedIn does not provide a stable unauthenticated public-avatar endpoint for arbitrary profiles, so the static site does not scrape LinkedIn on page load. If a remote LinkedIn photo becomes unavailable, the avatar automatically falls back to the generic icon.
+TEAM / LINKEDIN NOTE
+----------------------
+Every named person on the Team page has a clickable portrait and a LinkedIn pill button. Public direct LinkedIn profile URLs are used where they could be verified. Dominik Komosný currently uses an exact-name LinkedIn people-search fallback because a stable public /in/ URL was not exposed by the unauthenticated public index. If a remote LinkedIn photo becomes unavailable, the avatar falls back to the built-in person icon while the LinkedIn link remains available.
+
+BRAND ASSET NOTE
+----------------
+The SkillsTech Lab header logo and favicon set were regenerated in the site's navy / teal / cyan palette to match the CSS variables and page-hero styling. The darker favicon uses the navy site background so it does not visually overpower the interface.

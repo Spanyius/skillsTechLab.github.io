@@ -1370,3 +1370,42 @@ Accessibility target: WCAG 2.2 AA-oriented implementation for the supplied page 
         margin-bottom: 1.5rem;
     }
 }
+
+/* Team profile links */
+.stl-site .stl-person-links { margin-top: auto; }
+.stl-site .stl-button--linkedin {
+  gap: .45rem;
+  border-color: rgba(0, 111, 106, .24);
+  background: linear-gradient(135deg, rgba(0,111,106,.075), rgba(8,115,143,.07));
+  color: #075e68;
+}
+.stl-site .stl-button--linkedin:hover {
+  border-color: rgba(0,111,106,.38);
+  background: #e8f6f5;
+  color: #054f57;
+}
+
+/* Clickable institution footer */
+.demo-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: .35rem .55rem;
+}
+.demo-footer-links a {
+  color: #294958;
+  font-weight: 700;
+  text-decoration: none;
+  text-underline-offset: .18em;
+}
+.demo-footer-links a:hover {
+  color: #006f6a;
+  text-decoration: underline;
+}
+.demo-footer-links a:focus-visible {
+  outline: 3px solid #061c2b;
+  outline-offset: 3px;
+  border-radius: 5px;
+}
+.demo-footer-links span { color: #91a7b1; }
