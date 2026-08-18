@@ -1359,3 +1359,18 @@ Accessibility target: WCAG 2.2 AA-oriented implementation for the supplied page 
 @media (prefers-reduced-motion: reduce) {
   .demo-menu-toggle .demo-menu-line { transition: none; }
 }
+
+.stl-institution-logo {
+    display: block;
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    margin: 1.25rem 0 1.75rem;
+}
+
+@media (max-width: 640px) {
+    .stl-institution-logo {
+        max-width: 300px;
+        margin-bottom: 1.5rem;
+    }
+}
