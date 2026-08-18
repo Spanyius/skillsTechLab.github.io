@@ -282,6 +282,14 @@ Accessibility target: WCAG 2.2 AA-oriented implementation for the supplied page 
 }
 .stl-site .stl-stat strong { display: block; color: #fff; font-size: clamp(1.35rem, 2.6vw, 2rem); line-height: 1.1; }
 .stl-site .stl-stat span { display: block; margin-top: .4rem; color: #aac5d1; font-size: .86rem; line-height: 1.4; }
+.stl-site .stl-stat-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.stl-site .stl-stat-link:hover { text-decoration: none; }
+.stl-site .stl-stat-link:hover strong { color: #a7f4ee; }
+
 
 /* Standard page hero */
 .stl-site .stl-page-hero {
@@ -357,6 +365,16 @@ Accessibility target: WCAG 2.2 AA-oriented implementation for the supplied page 
 }
 .stl-site .stl-chip--blue { background: #edf2fb; color: #244f89; }
 .stl-site .stl-chip--ink { background: #e8eef1; color: #243e4e; }
+.stl-site .stl-chip--link {
+  text-decoration: none;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.stl-site .stl-chip--link:hover {
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 14px rgba(7,32,49,.12);
+}
+
 
 /* Pillar blocks */
 .stl-site .stl-pillar {
@@ -656,6 +674,24 @@ Accessibility target: WCAG 2.2 AA-oriented implementation for the supplied page 
   .stl-site .stl-endcap p { color: #222 !important; }
   .stl-site .stl-button { border: 1px solid #222; background: #fff; color: #000; box-shadow: none; }
 }
+
+
+/* Simple site footer */
+.demo-footer {
+  border-top: 1px solid #dce7eb;
+  background: #fff;
+  color: #294958;
+  font-family: Inter, Aptos, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.demo-footer-inner {
+  width: min(calc(100% - 40px), 1180px);
+  margin-inline: auto;
+  padding: 22px 0;
+  text-align: center;
+  font-size: .82rem;
+  line-height: 1.5;
+}
+.demo-footer strong { font-weight: 700; }
 
 /* Standalone preview header only */
 .demo-header {
